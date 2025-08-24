@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sims 4 Launcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 自定义标题栏 -->
+        <div class="title-bar">
+            <div class="title">The Sims 4 Launcher</div>
+            <div class="window-controls">
+                <button id="minimize-btn" class="window-control-btn">
+                    <span class="material-symbols-rounded">remove</span>
+                </button>
+                <button id="maximize-btn" class="window-control-btn">
+                    <span class="material-symbols-rounded">check_box_outline_blank</span>
+                </button>
+                <button id="close-btn" class="window-control-btn close">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 主界面 -->
+        <main id="main-view" class="view active">
+            <header class="main-header">
+                <img src="assets/images/logo.avif" alt="Logo" class="logo">
+                <button id="settings-btn" class="icon-btn">
+                    <span class="material-symbols-rounded">settings</span>
+                </button>
+            </header>
+
+            <section class="user-profile">
+                <img id="user-avatar-main" src="assets/images/default_avatar.jpg" alt="User Avatar" class="avatar">
+                <h2 id="username-main">btm_m</h2>
+            </section>
+
+            <section class="game-controls">
+                <button id="launch-game-btn" class="launch-btn">开始游戏</button>
+                <div class="launch-mode">
+                    <span>DX9</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dx-switch" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span>DX11</span>
+                </div>
+                <p class="game-version">游戏版本: <span id="version-text">检测中...</span></p>
+            </section>
+        </main>
+
+        <!-- 设置界面 -->
+        <main id="settings-view" class="view">
+            <header class="settings-header">
+                <button id="back-btn" class="icon-btn">
+                    <span class="material-symbols-rounded">arrow_back</span>
+                </button>
+                <h3>设置</h3>
+            </header>
+            
+            <div class="settings-content">
+                <!-- 用户设置卡片 -->
+                <div class="card">
+                    <div class="card-title">用户</div>
+                    <div class="setting-item user-setting">
+                        <img id="user-avatar-setting" src="assets/images/default_avatar.jpg" alt="User Avatar" class="avatar-setting">
+                        <div class="user-inputs">
+                            <input type="text" id="username-input" placeholder="输入用户名">
+                            <input type="text" id="avatar-url-input" placeholder="输入头像URL或点击头像上传">
+                        </div>
+                        <input type="file" id="avatar-file-input" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+
+                <!-- 外观设置卡片 -->
+                <div class="card">
+                    <div class="card-title">外观</div>
+                    <div class="setting-item">
+                        <span>模式</span>
+                        <div class="theme-switcher">
+                            <button id="light-theme-btn" class="theme-btn active">
+                                <span class="material-symbols-rounded">light_mode</span>
+                            </button>
+                            <button id="dark-theme-btn" class="theme-btn">
+                                <span class="material-symbols-rounded">dark_mode</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <span>主题色</span>
+                        <input type="color" id="theme-color-picker" value="#00838f">
+                    </div>
+                </div>
+
+                <!-- 游戏设置卡片 -->
+                <div class="card">
+                    <div class="card-title">游戏</div>
+                    <div class="setting-item column">
+                        <label for="game-dir-input">游戏目录</label>
+                        <div class="dir-selector">
+                            <input type="text" id="game-dir-input" placeholder="未设置" readonly>
+                            <button id="select-dir-btn">选择</button>
+                        </div>
+                        <small>需要精准到 "Game\Bin" 目录哦</small>
+                    </div>
+                </div>
+
+                <!-- 关于卡片 -->
+                <div class="card about-card">
+                    <img src="assets/images/logo.avif" alt="Logo" class="about-logo">
+                    <h4>The Sims 4 Launcher</h4>
+                    <p>Developed by btm_m</p>
+                    <p class="copyright">© 2025 btm_m</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 引入渲染进程脚本 -->
+    <script src="renderer.js"></script>
+</body>
+</html>

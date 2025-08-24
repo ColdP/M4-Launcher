@@ -1,0 +1,42 @@
+{
+  "name": "sims-4-launcher",
+  "version": "1.0.0",
+  "description": "A third-party launcher for The Sims 4.",
+  "main": "main.js",
+  "author": "btm_m",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "10.1.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.8.3",
+    "@electron-forge/maker-deb": "^7.8.3",
+    "@electron-forge/maker-rpm": "^7.8.3",
+    "@electron-forge/maker-squirrel": "^7.8.3",
+    "@electron-forge/maker-zip": "^7.8.3",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.3",
+    "@electron-forge/plugin-fuses": "^7.8.3",
+    "@electron/fuses": "^1.8.0",
+    "electron": "^31.3.1",
+    "win-version-info": "6.0.1"
+  },
+  "build": {
+    "appId": "com.btm.m.sims.4.launcher",
+    "productName": "The Sims 4 Launcher",
+    "win": {
+      "icon": "assets/images/icon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
